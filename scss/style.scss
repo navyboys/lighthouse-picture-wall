@@ -1,3 +1,5 @@
+$shadow-color: #888;
+
 body {
   font-family: Verdana;
   font-size: 1.5em;
@@ -14,10 +16,29 @@ body {
     img {
       height: 200px;
       width: 200px;
+      border-radius: 5%;
+      box-shadow: 10px 10px 10px $shadow-color;
+      margin: 10px;
+      -webkit-transition: -webkit-transform 1s ease-in-out;
+      transition: transform 1s ease-in-out;
     }
 
     .name {
       text-align: center;
     }
   }
+}
+
+.member:nth-child(odd) img:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transform: scale(1.05) rotate(5deg);
+  transform: scale(1.05) rotate(5deg);
+}
+
+.member:nth-child(even) img:hover {
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+  -webkit-transform: scale(1.05) rotate(-5deg);
+  transform: scale(1.05) rotate(-5deg);
 }
